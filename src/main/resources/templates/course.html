@@ -1,0 +1,84 @@
+<!DOCTYPE html >
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/course.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Course</title>
+</head>
+<body>
+  <div class="grid-container">
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index">Main Page</a></li>
+          <li><a href="student">Student</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1 id="mainh1">Student Courses</h1>
+      <label for="courses">Courses:
+      <select name= "course" id="selectCourse">
+        <option>Choose a course</option>
+    </select>
+    </label>
+       <div id="coursetable" >
+       <a href="new"> Add New Course</a>
+      <table border="1" cellpadding="10" color="black">
+		<thead>
+		<tr>
+		<th>  Course ID </th>
+		<th>  Name </th>
+		<th>  Credit </th>
+		<th>  Action </th>
+		</thead>
+		<tbody>
+		<tr th:each="course : ${listCourse}">
+		<td th:text ="${course.id}"> Product ID</td>
+		<td th:text ="${course.name}"> Name</td>
+		<td th:text ="${course.credit}"> Price</td>
+		<td>
+			<a th:href="@{'/edit/' + ${course.id}}">Edit</a>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+			<a th:href="@{'/delete/' + ${course.id}}">Delete</a>
+		</td>
+		</tr>
+		</tbody>
+		</table>
+		</div>
+    </main>
+   <section class="adviser"> 
+      <h1>Advisers</h1>
+      <button id="btn">Hours</button>
+      <ul id="list">
+        <li>Monday-Friday: 8-9</li>
+        <li> Saturday: 12 - 4</li>
+        <li id="sunday">Sunday: Closed</li>
+      </ul>
+    </section>
+    <section id="library">
+      <h1 id="liberaryh1">Library</h1>
+      <p>Hours 24/7</p>
+    </section>
+    <div class="description">
+      <h1>Course Description</h1>
+
+    </div>
+    <footer>
+      <div class="socials">
+      <p id="footerP">
+        Copyright &copy; 2020-2022 autoShop, Inc. - All rights reserved.
+      </p>
+      <strong>Follow us on: </strong>
+        <span class="span"><a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a></span>
+        <span class="span"><a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a></span>
+        <span class="span"><a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a></span>
+        <span class="span"><a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a></span>
+    </footer>
+  </div>
+  <script src="/js/course.js"></script>
+</body>
+</html>

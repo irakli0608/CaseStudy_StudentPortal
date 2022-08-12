@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>MainPage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script
+      src="https://kit.fontawesome.com/d02361ac83.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js"></script>
+  </head>
+  <body>
+</form>
+    <div class="main">
+      <nav>
+        <label for="membership" id="">:
+        <select name="Semester" id="menu" class="menu">
+          <option value="">Select Semester</option>
+          <option value="US">Fall</option>
+          <option value="US">Winter</option>
+          <option value="IN">Spring</option>
+        </select>
+      </label>
+        <img src="/images/LION.jpg" class="logo" / alt="">
+        <ul>
+          <li><a href="course">Course</a></li>
+          <li><a href="student">Student</a></li>
+            <li sec:authorize="isAuthenticated()" style="color:white"><a th:href="@{/logout}">Logout</a></li>
+        </ul>
+        <button type="button" onclick="toggleBtn()" id="btn">
+          <span>I</span>
+        </button>
+      </nav>
+      <div class="lamp_container">
+        <img src="/images/lamp.png" class="lamp" alt="" />
+        <table class="table" id="table" border="3px" align="center">
+          <style>
+            .table{
+              margin-top: 15px;
+              margin-left: 15px;
+              color:#fff;
+              border-radius: 12px;
+              border-color:#00986f;
+            }
+          </style>
+          <thead>
+            <tr>
+              <th>Semester</th>
+              <th>Start</th>
+              <th>End</th>
+            </tr>
+           </thead>
+           <tbody>
+             <tr>
+               <td>Fall</td>
+               <td>09.01</td>
+               <td>12.22</td>
+             </tr>
+             <tr>
+               <td>Winter</td>
+               <td>01.12</td>
+               <td>03.01</td>
+             </tr>
+             <tr>
+               <td>Spring</td>
+               <td>03.16</td>
+               <td>07.13</td>
+             </tr>
+             <tr>
+             </tr>
+          </tbody>
+        </table>
+        <img src="/images/light.png" class="light" id="light" alt="" />
+      </div>
+  
+      <div class="text-container">
+        <h1 class="student">Student Portal</h1>
+        <p onmouseover="mouseOver(this)" onmouseout="mouseOut(this)">
+          The nation’s largest urban university, offering a range of
+          undergraduate, graduate degrees and continuing education opportunities
+          to over 500,000 students of all ages and backgrounds on 25 NYC
+          campuses.
+        </p>
+        <br />
+        <p style="font-size: 20px;  margin-left: 110px;">Reach out with any questions</p>
+        <a href="questions" class="question" id="questions">Questions?</a>
+        <div class="control">
+          <p>Start</p>
+          <div class="line"><span></span></div>
+          <p>Finish</p>
+        </div>
+      </div>
+    </div>
+    <script src="../js/app.js"></script>
+  </body>
+</html>
