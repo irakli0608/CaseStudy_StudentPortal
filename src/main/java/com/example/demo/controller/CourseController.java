@@ -19,7 +19,7 @@ import com.example.demo.service.CourseService;
 
 
 @Controller
-public class AppController {
+public class CourseController {
 	@Autowired
 	private CourseService service;
 
@@ -32,15 +32,14 @@ public class AppController {
 		return "registry";
 	}
 	
-	@GetMapping("/student")
-	public String userStudent() {
-		return "student";
-	}
+
 
 	@GetMapping("/questions")
 	public String userQuestions() {
 		return "questions";
 	}
+	
+	
 	@RequestMapping("/index")
 	public String userFromQuestions() {		
 		return "index";

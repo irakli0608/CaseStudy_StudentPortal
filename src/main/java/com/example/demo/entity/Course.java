@@ -23,13 +23,13 @@ public class Course {
 	private String name;
 	@Column(length = 25 , nullable =false )
 	private Integer credit;
-	@ManyToMany
-	@JoinTable(
-			name = "student_course",
-			joinColumns = @JoinColumn(name = "student_id"),
-			inverseJoinColumns = @JoinColumn(name = "course_id")
-			)
-	private List<Course> course = new ArrayList<>();
+//	@ManyToMany
+//	@JoinTable(
+//			name = "student_course",
+//			joinColumns = @JoinColumn(name = "student_id"),
+//			inverseJoinColumns = @JoinColumn(name = "course_id")
+//			)
+//	private List<Course> course = new ArrayList<>();
 	
 	public Course(Integer id, String name, Integer credit) {
 		this.id = id;
@@ -57,10 +57,10 @@ public class Course {
 	public void setCredit(Integer credit) {
 		this.credit = credit;
 	}
-	public List<Course> getCourse() {
-		return course;
-	}
-	public void setCourse(List<Course> course) {
-		this.course = course;
-	}
+//	public List<Course> getCourse() {
+//		return course;
+//	}
+//	public void setCourse(List<Course> course) {
+//		this.course = course;
+//	}
 }

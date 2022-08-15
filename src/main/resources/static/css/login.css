@@ -1,109 +1,12 @@
 
-div form div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 50%;
-  height: 625px;
-  text-align: center;
-  margin: 30% 25%;
-  background-color: rgba(3, 3, 3, 0.4);
-}
 
-h1 {
-  font-family:  "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 60px;
-  color: rgb(0, 0, 0);
-  text-shadow: 2px 2px pink;
-}
-
-.loginForm {
-  position: relative;
-  vertical-align: middle;
-  align-self: center;
-  width: 100%;
-}
-
-a {
-  color: bisque;
-  text-decoration: none; /*  removee line from hifen*/
-}
-.registry {
-  color: bisque;
-  border: 1px;
-  background-color: rgb(6, 43, 43);
-  height: 50px;
-  width: 200px;
-  margin-top: 20px;
-  font-size: 20px;
-  padding-top: 15px;
-}
-
-#b {
-  color: bisque;
-  border: 1px;
-  background-color: rgb(6, 43, 43);
-  height: 70px;
-  width: 250px;
-  border-radius: 10px;
-  margin-top: 20px;
-  font-size: 20px;
-  cursor: pointer;
-  border-radius: 25px;
-}
-#b:focus {
-  outline-color: transparent;
-  outline-style: solid;
-  box-shadow: 0 0 0 4px #5a01a7;
-  transition: 0.3s;
-}
-#b:hover {
-  background-color: rgb(19, 97, 198);
-  color: aliceblue;
-  font-size: 15px;
-  transform: scale(1.3);
-}
-
-img {
-  display: flex;
-  position: absolute;
-  top: -15%;
-  left: 43%;
-  width: 150px;
-  height: 150px;
-  color: white;
-  align-content: center;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8),
-    -4px -4px 10px rgba(255, 255, 255, 0.4),
-    inset -4px -4px 10px rgba(0, 0, 0, 0.4),
-    inset 4px 4px 10px rgba(255, 255, 255, 0.4);
-  border-radius: 100%;
-  opacity: 0.9;
-}
-
-#email {
-  font-size: 30px;
-  border: 1px;
-  background-color: lightgray;
-  height: 100px;
-  width: 300px;
-  border-radius: 10px;
-  margin-top: 20px;
-}
-
-#password {
-  font-size: 30px;
-  border: 1px;
-  background-color: lightgray;
-  height: 100px;
-  width: 300px;
-  border-radius: 10px;
-  margin-top: 20px;
+.cotainer{
+		text-align:center;
+	  background-image: url(../images/login.jpg);
 }
 
 body {
-  background-image: url(/images/login.jpg);
+  background-image: url(../images/login.jpg);
   background-size: cover;
   opacity: 0.9;
 }
