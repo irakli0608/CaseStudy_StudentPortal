@@ -26,7 +26,7 @@ public class StudentService {
 	
 	
 	public List<Student> listAll(){
-		return repo.findAll();
+		return repo.findStudents();
 		}
 	public void save(Student  student) {
 		repo.save(student);

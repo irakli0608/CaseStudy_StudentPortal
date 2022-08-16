@@ -1,6 +1,7 @@
 package com.example.demo.entity;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -33,14 +34,9 @@ public class Student {
 	@Column(length = 25 , nullable =false)
 	private String email;
 	
-	
-	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
-	@JoinTable(
-			name = "student_course",
-			joinColumns = @JoinColumn(name = "course_id"),
-			inverseJoinColumns = @JoinColumn(name = "student_id")
-			)
-	private List<Course> course = new ArrayList<>();
+	//(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+	@ManyToMany
+	private List<Course> course;
 	
 
 	public Student() {

@@ -28,18 +28,16 @@ public class StudentController {
 
 	@RequestMapping("/student")
 	public String viewCoursePage(Model model) {
-	    List<Course> listcourse = services.listAll();
 		List<Student> listStudent = service.listAll();
-		model.addAttribute("listcourse", listcourse);
-		model.addAttribute("course", new Course());
+		
 		for(Student S: listStudent) {
 			System.out.println(S.getEmail());
+			System.out.println(S.getCourse().get(0).getName());
 		}
-		for(Course C: listcourse) {
-		System.out.println(C.getName());
-		}
+//		for(Course C: listcourse) {
+//		System.out.println(C.getName());
+//		}
 		model.addAttribute("liststudent", listStudent);
-		  model.addAttribute("student", new Student());
 		return "student";
 		
 	}
