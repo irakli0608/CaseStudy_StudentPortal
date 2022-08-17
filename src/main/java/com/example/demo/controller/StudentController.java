@@ -29,44 +29,40 @@ public class StudentController {
 	@RequestMapping("/student")
 	public String viewCoursePage(Model model) {
 		List<Student> listStudent = service.listAll();
-		
+		List<Course> listCourse = services.listAll();
 		for(Student S: listStudent) {
 			System.out.println(S.getEmail());
 			System.out.println(S.getCourse().get(0).getName());
+			System.out.println(S.getCourse().get(0).getCredit());
 		}
-//		for(Course C: listcourse) {
+//		for(Course C: listCourse) {
 //		System.out.println(C.getName());
 //		}
-		model.addAttribute("liststudent", listStudent);
-		return "student";
 		
+		model.addAttribute("listcourse", listCourse);
+		model.addAttribute("liststudent", listStudent);
+		model.addAttribute("student", new Student());
+		model.addAttribute("course", new Course());
+		return "student";
 	}
 
 	
-	@RequestMapping("/addstudent")
+	@GetMapping("/addstudent")
 	public String showNewProductFrom(Model model) {
 		Student student = new Student();
 		model.addAttribute("student", student);
 		return "addstudent";
 	}
+	
 //	
-//	
-//	  @RequestMapping(value = "/save", method = RequestMethod.POST)
-//    public String saveStudent(@ModelAttribute("student") Student std)
-//    {
-//        service.save(std);
+//  @RequestMapping(value = "/save", method = RequestMethod.POST)
+//   public String saveStudent(@ModelAttribute("student") Student student)
+//   {
+//       service.save(student);
 //        return "redirect:/student";
-//    }
-//    
-//	 @RequestMapping("/edit/{id}")
-//	    public ModelAndView showEditStudentPage(@PathVariable(name = "id") int id) {
-//	        ModelAndView mav = new ModelAndView("addstudent");
-//	        List<Course> listcourse = services.listAll();
-//	        Student std = service.get(id);
-//	        mav.addObject("student", std);
-//	        return mav;
-//	        
-//	    }
+//   }
+//
+//
 //	    @RequestMapping("/delete/{id}")
 //	    public String deleteStudentPage(@PathVariable(name = "id") int id) {
 //	        service.delete(id);

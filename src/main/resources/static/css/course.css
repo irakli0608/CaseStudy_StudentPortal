@@ -48,10 +48,14 @@ main {
 #mainh1 {
   text-align: center;
 }
+.newcourse{
+	 margin-top:300px;
+	align-content: center
+}
 
 #coursetable{
-	background: rgba(51, 140, 51, .5) ;
-	 margin-top:200px;
+	background: rgba(0, 0, 0, .7) ;
+
 	 text-align: center;
 }
 #selectCourse {

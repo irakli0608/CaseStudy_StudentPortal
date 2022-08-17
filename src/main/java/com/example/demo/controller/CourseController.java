@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.example.demo.Repository.UserRepository;
 import com.example.demo.entity.Course;
 import com.example.demo.service.CourseService;
 
@@ -65,6 +64,7 @@ public class CourseController {
 	@RequestMapping(value= "/save", method = RequestMethod.POST)
 	public String saveCourse(@ModelAttribute("course") Course course) {
 		service.save(course);
+		
 		
 		return "redirect:/course";
 	}

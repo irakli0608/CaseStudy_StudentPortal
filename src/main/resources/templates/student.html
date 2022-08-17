@@ -22,12 +22,11 @@
 			</nav>
 		</header>
 		<main>
-			<div id="coursetable">
-
-
-				<h1>Register Student to the Course</h1>
-				<a href="addstudent"> Add New Student</a>
-				<table border="1" color="black">
+		<h1 id="h1register">Register Student to the Course</h1>
+			<div  style="margin-top: 200px;">
+				
+				<a href="addstudent" > Add New Student</a>
+				<table  border="1" cellpadding="10" color="black" id="studenttable">
 					<thead>
 						<tr>
 							<th>Student Email</th>
@@ -37,18 +36,12 @@
 						</tr>
 					</thead>
 					<tbody>
-
 						<tr th:each="student: ${liststudent}">
-						
-<!-- 						<tr th:each="course: ${student.course}"> -->
 							<td th:text="${student.email}">Email</td>
-<!-- 							<td th:text="${course.name}">CourseName</td> -->
-<!-- 							<td th:text="${course.credit}">Credit</td> -->
-							<td><a th:href="@{'/edit/' + ${student.id}}">Edit</a>
-								&nbsp;&nbsp;&nbsp;&nbsp; <a
-								th:href="@{'/delete/' + ${student.id}}">Delete</a></td>
+							<td th:text="${student.course}">Course</td>
+							<td th:text="${course.credit}">Credit</td> 	
+							<td><a th:href="@{'/delete/' + ${student.id}}">Delete</a></td>
 						</tr>
-						
 					</tbody>
 				</table>
 			</div>
@@ -62,7 +55,6 @@
 				<li>Math</li>
 				<li>Chemistry</li>
 				<li>Biology</li>
-
 			</ul>
 		</section>
 		<section id="library">
@@ -82,12 +74,12 @@
 		</div>
 		<footer>
 			<div class="socials">
-				<p id="footerP">Copyright &copy; 2020-2022 autoShop, inc. - All
+				<p id="footerP">Copyright &copy; 2020-2022 Student, Inc. - All
 					rights reserved.</p>
 				<strong>Follow us on: </strong> <span class="span"><a
 					href="https://www.twitter.com"><i class="fab fa-twitter"></i></a></span> <span
 					class="span"><a href="https://www.facebook.com"><i
-						class="fab fa-facebook-f"></i></a></span> <span class="span"><a
+					class="fab fa-facebook-f"></i></a></span> <span class="span"><a
 					href="https://www.youtube.com"><i class="fab fa-youtube"></i></a></span> <span
 					class="span"><a href="https://www.instagram.com"><i
 						class="fab fa-instagram"></i></a></span>

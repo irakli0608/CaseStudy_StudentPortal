@@ -1,22 +1,13 @@
 package com.example.demo.entity;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
 
 
 
@@ -34,7 +25,7 @@ public class Student {
 	@Column(length = 25 , nullable =false)
 	private String email;
 	
-	//(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+	
 	@ManyToMany
 	private List<Course> course;
 	
