@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,7 +11,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.entity.Course;
 import com.example.demo.entity.Student;
@@ -35,14 +35,8 @@ public class StudentController {
 			System.out.println(S.getCourse().get(0).getName());
 			System.out.println(S.getCourse().get(0).getCredit());
 		}
-//		for(Course C: listCourse) {
-//		System.out.println(C.getName());
-//		}
-		
-		model.addAttribute("listcourse", listCourse);
 		model.addAttribute("liststudent", listStudent);
-		model.addAttribute("student", new Student());
-		model.addAttribute("course", new Course());
+		 model.addAttribute("student", new Student());
 		return "student";
 	}
 
@@ -54,18 +48,24 @@ public class StudentController {
 		return "addstudent";
 	}
 	
-//	
-//  @RequestMapping(value = "/save", method = RequestMethod.POST)
-//   public String saveStudent(@ModelAttribute("student") Student student)
-//   {
-//       service.save(student);
-//        return "redirect:/student";
-//   }
-//
-//
-//	    @RequestMapping("/delete/{id}")
-//	    public String deleteStudentPage(@PathVariable(name = "id") int id) {
-//	        service.delete(id);
-//	        return "student";
-//	    }
+	
+  @RequestMapping(value = "/save", method = RequestMethod.POST)
+  public String saveStudent(@ModelAttribute("student") Student student)
+   {
+       service.save(student);
+       return "redirect:/student";
+   }
+
+	    @GetMapping("/delete/{id}")
+	    public   String  deleteStudentPage(@PathVariable(name = "id") int id) {
+			List<Student> listStudent = service.listAll();
+	        service.delete(id);
+	        try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	       return "redirect:/student";
+	    }
 }

@@ -38,8 +38,8 @@
 					<tbody>
 						<tr th:each="student: ${liststudent}">
 							<td th:text="${student.email}">Email</td>
-							<td th:text="${student.course}">Course</td>
-							<td th:text="${course.credit}">Credit</td> 	
+							<td th:text="${student.getCourse().get(0).getName()}">Course</td>
+							<td th:text="${student.getCourse().get(0).getCredit()}">Credit</td> 	
 							<td><a th:href="@{'/delete/' + ${student.id}}">Delete</a></td>
 						</tr>
 					</tbody>

@@ -61,7 +61,7 @@ public class CourseController {
 	}
 	
 	
-	@RequestMapping(value= "/save", method = RequestMethod.POST)
+	@RequestMapping(value= "/savecourse", method = RequestMethod.POST)
 	public String saveCourse(@ModelAttribute("course") Course course) {
 		service.save(course);
 		
@@ -76,7 +76,7 @@ public class CourseController {
 		return mav;
 	}
 
-	@RequestMapping("/delete/{id}")
+	@RequestMapping("/deletecourse/{id}")
 	public String deleteProduct(@PathVariable(name="id") Integer id) {
 		service.delete(id);
 		return "redirect:/course";
