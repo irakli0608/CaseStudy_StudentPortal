@@ -6,7 +6,7 @@
 </head>
 <body>
 <div align="center">
- <h1>Create New Student</h1>
+ <h1> New Student to the Course</h1>
  <br/>
  <form action= "#" th:action="@{/save}" th:object="${student}" method="post">
  <table borde="0" cellpadding="10">
@@ -32,7 +32,7 @@
 
   </tr>
    <tr> 
-  	<td> Course name </td>
+  	<td> Course Id </td>
   	<td><input type="text" th:field="*{course}" /></td>
   </tr>
   <tr> 
