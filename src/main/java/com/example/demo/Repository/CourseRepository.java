@@ -13,5 +13,5 @@ import com.example.demo.entity.Course;
 
 public interface CourseRepository extends JpaRepository <Course, Integer> {
 	
-
+	public Course findByName(String name);
 }
