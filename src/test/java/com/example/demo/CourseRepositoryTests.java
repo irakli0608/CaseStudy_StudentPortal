@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.annotation.Rollback;
 
 import com.example.demo.entity.Course;
@@ -22,6 +23,9 @@ public class CourseRepositoryTests {
 	@Autowired
 	private CourseRepository repo;
 	
+	@Autowired
+	private TestEntityManager entityManager;
+
 	
 	@Test
 	@Rollback(false)
@@ -43,4 +47,17 @@ public class CourseRepositoryTests {
 	     
 	}
 	
+	@Test
+	@Rollback(false)
+	public void testUpdateProduct() {
+		Course product = repo.findByName("JavaScript");
+		product.setCredit(5);
+		repo.save(product);
+		Course updatedProduct = repo.findByName("JavaScript");
+		assertThat(updatedProduct.getCredit()).isGreaterThan(0);
+
+	}
+	
 }
+	
+

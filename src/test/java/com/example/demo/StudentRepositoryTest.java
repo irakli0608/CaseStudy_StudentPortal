@@ -28,16 +28,4 @@ public class StudentRepositoryTest {
 	assertThat(student).size();
 	}
 	
-//	@Test
-//	@Rollback(false)
-//	public void testDeleteProduct() {
-//	    Student product = repo.find("");
-//	     
-//	    repo.deleteById(product.getId());
-//	     
-//	    Student deletedProduct = repo.findByName("");
-//	     
-//	    assertThat(deletedProduct).isNull();       
-//	     
-//	}
 }
