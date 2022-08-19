@@ -31,11 +31,11 @@ public class StudentRepositoryTest {
 //	@Test
 //	@Rollback(false)
 //	public void testDeleteProduct() {
-//	    Student product = repo("iPhone 10");
+//	    Student product = repo.find("");
 //	     
 //	    repo.deleteById(product.getId());
 //	     
-//	    Student deletedProduct = repo.findByName("iPhone 10");
+//	    Student deletedProduct = repo.findByName("");
 //	     
 //	    assertThat(deletedProduct).isNull();       
 //	     
