@@ -28,14 +28,14 @@ public class CourseRepositoryTests {
 
 	
 	@Test
-	@Rollback(false)
+	@Rollback(true)
 	public void testListCourse() {
 	List<Course> products = (List<Course>) repo.findAll();
 	assertThat(products).size().isGreaterThan(0);
 	}
 	
 	@Test
-	@Rollback(false)
+	@Rollback(true)
 	public void testDeleteProduct() {
 	    Course product = repo.findByName("CSS");
 	     
@@ -48,7 +48,7 @@ public class CourseRepositoryTests {
 	}
 	
 	@Test
-	@Rollback(false)
+	@Rollback(true)
 	public void testUpdateProduct() {
 		Course product = repo.findByName("JavaScript");
 		product.setCredit(5);

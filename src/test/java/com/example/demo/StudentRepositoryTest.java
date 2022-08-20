@@ -22,7 +22,7 @@ public class StudentRepositoryTest {
 	private StudentRepository repo;
 	
 	@Test
-	@Rollback(false)
+	@Rollback(true)
 	public void testListStudent() {
 	List<Student> student = (List<Student>) repo.findAll();
 	assertThat(student).size();

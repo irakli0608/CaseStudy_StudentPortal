@@ -37,10 +37,13 @@
 					</thead>
 					<tbody>
 						<tr th:each="student: ${liststudent}">
+						<div th:each="c: ${student.course}">
 							<td th:text="${student.email}">Email</td>
-							<td th:text="${student.getCourse().get(0).getName()}">Course</td>
-							<td th:text="${student.getCourse().get(0).getCredit()}">Credit</td> 	
+							<td th:text="${c.name}"></td>
+							<td th:text="${c.credit}"></td>
 							<td><a th:href="@{'/delete/' + ${student.id}}">Delete</a></td>
+						</div>
+						</tr>
 						</tr>
 					</tbody>
 				</table>
