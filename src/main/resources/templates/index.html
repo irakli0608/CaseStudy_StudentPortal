@@ -17,7 +17,7 @@
 </form>
     <div class="main">
       <nav>
-        <label for="membership" id="">:
+        <label for="membership" id="">
         <select name="Semester" id="menu" class="menu">
           <option value="">Select Semester</option>
           <option value="US">Fall</option>
@@ -25,14 +25,14 @@
           <option value="IN">Spring</option>
         </select>
       </label>
-        <img src="/images/LION.jpg" class="logo" / alt="">
+        <img src="/images/LION.jpg" class="logo"  alt="">
         <ul>
           <li><a href="course">Course</a></li>
           <li><a href="student">Student</a></li>
             <li sec:authorize="isAuthenticated()" style="color:white"><a th:href="@{/logout}">Logout</a></li>
         </ul>
         <button type="button" onclick="toggleBtn()" id="btn">
-          <span>I</span>
+          <span></span>
         </button>
       </nav>
       <div class="lamp_container">

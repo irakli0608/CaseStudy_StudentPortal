@@ -37,11 +37,11 @@ public class CourseRepositoryTests {
 	@Test
 	@Rollback(true)
 	public void testDeleteProduct() {
-	    Course product = repo.findByName("CSS");
+	    Course product = repo.findByName("Algebra");
 	     
 	    repo.deleteById(product.getId());
 	     
-	    Course deletedCourse = repo.findByName("CSS");
+	    Course deletedCourse = repo.findByName("Algebra");
 	     
 	    assertThat(deletedCourse).isNull();       
 	     
