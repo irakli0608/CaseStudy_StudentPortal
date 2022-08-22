@@ -22,7 +22,7 @@ public class StudentService {
 	
 	
 	public List<Student> listAll(){
-		return repo.findStudents();
+		return repo.findAll();
 		}
 	public void save(Student  student) {
 		repo.save(student);

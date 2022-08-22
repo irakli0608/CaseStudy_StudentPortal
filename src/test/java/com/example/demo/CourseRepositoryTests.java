@@ -30,16 +30,16 @@ public class CourseRepositoryTests {
 	@Test
 	@Rollback(true)
 	public void testListCourse() {
-	List<Course> products = (List<Course>) repo.findAll();
-	assertThat(products).size().isGreaterThan(0);
+	List<Course> courses = (List<Course>) repo.findAll();
+	assertThat(courses).size().isGreaterThan(0);
 	}
 	
 	@Test
 	@Rollback(true)
 	public void testDeleteProduct() {
-	    Course product = repo.findByName("Algebra");
+	    Course course = repo.findByName("Algebra");
 	     
-	    repo.deleteById(product.getId());
+	    repo.deleteById(course.getId());
 	     
 	    Course deletedCourse = repo.findByName("Algebra");
 	     
@@ -48,11 +48,17 @@ public class CourseRepositoryTests {
 	}
 	
 	@Test
+	public void testFindCourseByName() {
+	    Course course = repo.findByName("Java");    
+	    assertThat(course.getName()).isEqualTo("Java");
+	}
+
+	@Test
 	@Rollback(true)
-	public void testUpdateProduct() {
-		Course product = repo.findByName("JavaScript");
-		product.setCredit(5);
-		repo.save(product);
+	public void testUpdateCourse() {
+		Course course = repo.findByName("JavaScript");
+		course.setCredit(5);
+		repo.save(course);
 		Course updatedProduct = repo.findByName("JavaScript");
 		assertThat(updatedProduct.getCredit()).isGreaterThan(0);
 

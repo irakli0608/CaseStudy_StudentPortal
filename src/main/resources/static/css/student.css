@@ -104,6 +104,7 @@ main {
 }
 
 #library {
+border: 2px solid lightgray;
   grid-area: library;
   background-color: var(--layover-color);
   background-image: url(/images/graduation.jpg);
@@ -118,6 +119,8 @@ main {
 }
 
 #library:hover {
+	
+	border: 2px solid lightgray;
   grid-area: library;
   background-color: var(--layover-color);
   background-image: url(/images/graduation.jpg);
