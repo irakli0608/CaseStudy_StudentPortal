@@ -39,8 +39,8 @@ public class StudentRepositoryTest {
 	
 	@Test
     public void testDelete() {
-        Integer student = 98;
-        repo.deleteById(98);
+        Integer student = 87;
+        repo.deleteById(87);
         Optional<Student> optionalMember = repo.findById(student);
         Assertions.assertThat(optionalMember).isNotPresent();
     }

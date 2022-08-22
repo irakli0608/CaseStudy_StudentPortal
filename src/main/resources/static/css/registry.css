@@ -10,8 +10,8 @@ body{
 	display:flex;
 	align-items: center;
 	justify-content: center;
-	background-image:url("/images/login.jpg");
-	background: #0d6efd;
+	background-image:url("/images/register.jpg");
+ 	/*  background: #0d6efd;  */
 	background-size: cover;
 	text-align: center;
 }
