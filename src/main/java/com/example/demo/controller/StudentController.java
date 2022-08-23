@@ -25,11 +25,12 @@ public class StudentController {
 	@Autowired
 	private CourseService services;
 
-
+// lists students and courses along with credit
 	@RequestMapping("/student")
 	public String viewCoursePage(Model model) {
 		List<Student> listStudent = service.listAll();
 		List<Course> listCourse = services.listAll();
+		// for loop for display purpose 
 		for(Student S: listStudent) {
 			System.out.println(S.getEmail());
 			System.out.println(S.getCourse().get(0).getName());
@@ -40,7 +41,7 @@ public class StudentController {
 		return "student";
 	}
 
-	
+	// adds students 
 	@GetMapping("/addstudent")
 	public String showNewProductFrom(Model model) {
 		Student student = new Student();
@@ -48,14 +49,14 @@ public class StudentController {
 		return "addstudent";
 	}
 	
-	
+	// save student course 
   @RequestMapping(value = "/save", method = RequestMethod.POST)
   public String saveStudent(@ModelAttribute("student") Student student)
    {
        service.save(student);
        return "redirect:/student";
    }
-
+// delete relationship 
 	    @GetMapping("/delete/{id}")
 	    public   String  deleteStudentPage(@PathVariable(name = "id") int id) {
 			List<Student> listStudent = service.listAll();

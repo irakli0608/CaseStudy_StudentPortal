@@ -26,7 +26,7 @@ public class UserRegistrationController {
    public UserRegistrationDto userRegistrationDto() {
        return new UserRegistrationDto();
    }
-
+ // spring security 
    @GetMapping
    public String showRegistrationForm(Model model) {
        return "registration";

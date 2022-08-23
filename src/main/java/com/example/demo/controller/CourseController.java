@@ -44,23 +44,23 @@ public class CourseController {
 		return "index";
 	}
 
-	
+	// lists courses
 	@RequestMapping("/course")
 	public String viewCoursePage(Model model) {
-		List<Course> listProducts = service.listAll();
-		model.addAttribute("listCourse", listProducts);
+		List<Course> listCourses = service.listAll();
+		model.addAttribute("listCourse", listCourses);
 		return "course";
 	}
 
-	
+	// creates new course 
 	@RequestMapping("/new")
-	public String showNewProductFrom(Model model) {
+	public String showNewCourseFrom(Model model) {
 		Course course = new Course();
 		model.addAttribute("course", course);
 		return "new_course";
 	}
 	
-	
+	// saves courses 
 	@RequestMapping(value= "/savecourse", method = RequestMethod.POST)
 	public String saveCourse(@ModelAttribute("course") Course course) {
 		service.save(course);
@@ -68,16 +68,18 @@ public class CourseController {
 		
 		return "redirect:/course";
 	}
+	
+	// edits course 
 	@RequestMapping("/edit/{id}")
-	public ModelAndView showEditProductFrom(@PathVariable(name = "id") Integer id) {
+	public ModelAndView showEditCourseFrom(@PathVariable(name = "id") Integer id) {
 		ModelAndView mav = new ModelAndView("edit_course");
 		Course course = service.get(id);
 		mav.addObject("course", course);
 		return mav;
 	}
-
+// deletes course 
 	@RequestMapping("/deletecourse/{id}")
-	public String deleteProduct(@PathVariable(name="id") Integer id) {
+	public String deleteCourse(@PathVariable(name="id") Integer id) {
 		service.delete(id);
 		return "redirect:/course";
 	}

@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MainController {
 
+	// just mapping for main pages 
+	
     @GetMapping("/")
     public String root() {
         return "index";
