@@ -39,13 +39,11 @@ public class StudentRepositoryTest {
 		List<Student> student = (List<Student>) repo.findAll("Irakli@gmail.com");
 	assertThat(student.get(0).getEmail()).isEqualTo("Irakli@gmail.com");
 	}
-	
-	
 	// deletes student based on the id 
 	@Test
     public void testDelete() {
-        Integer student = 87;
-        repo.deleteById(87);
+        Integer student = 130;
+        repo.deleteById(130);
         Optional<Student> optionalMember = repo.findById(student);
         Assertions.assertThat(optionalMember).isNotPresent();
     }

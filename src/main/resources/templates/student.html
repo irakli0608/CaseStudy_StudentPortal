@@ -30,6 +30,7 @@
 					<thead>
 						<tr>
 							<th>Student Email</th>
+							<th>Id</th>
 							<th>Course</th>
 							<th>Credit</th>
 							<th>Action</th>
@@ -39,6 +40,7 @@
 						<tr th:each="student: ${liststudent}">
 						<div th:each="c: ${student.course}">
 							<td th:text="${student.email}">Email</td>
+							<td th:text="${student.id}"></td>
 							<td th:text="${c.name}"></td>
 							<td th:text="${c.credit}"></td>
 							<td><a th:href="@{'/delete/' + ${student.id}}">Delete</a></td>

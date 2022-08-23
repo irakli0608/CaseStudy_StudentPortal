@@ -4,9 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
 
-import org.junit.jupiter.api.ClassOrderer.OrderAnnotation;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
@@ -42,16 +40,16 @@ public class CourseRepositoryTests {
 		course.setCredit(3);
 		Course savedCourse = repo.save(course);
 		assertThat(savedCourse.getName()).isEqualTo("junit");
-		assertThat(savedCourse.getCredit()).isEqualTo("3");
+		assertThat(savedCourse.getCredit()).isEqualTo(3);
 		assertThat(savedCourse.getId()).isGreaterThan(0);
 	}
 // delete course needs actual course in order to delete 
 	@Test
-	@Rollback(true)
+	@Rollback(false)
 	public void testDeleteCourse() {
-		Course course = repo.findByName("junit");
+		Course course = repo.findByName("HTML");
 		repo.deleteById(course.getId());
-		Course deletedCourse = repo.findByName("junit");
+		Course deletedCourse = repo.findByName("HTML");
 		assertThat(deletedCourse).isNull();
 
 	}
